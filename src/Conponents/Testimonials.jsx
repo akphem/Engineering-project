@@ -1,85 +1,64 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const testimonialsData = [
+const testimonials = [
   {
-    id: 1,
-    name: 'John Doe',
-    title: 'CEO, Company A',
-    testimonial: 'The engineering consulting services provided were exceptional. They helped us optimize our design and significantly reduce costs.',
-    image: 'https://via.placeholder.com/100', // Replace with an actual image URL
+    name: 'Benny',
+    role: 'ARCHITECT (INTJ-A)',
+    comment: 'Incredibly thorough and scary. It’s like someone putting a mirror to your face and you seeing your true self whether you like it or not.',
+    img: 'path-to-image/benny.png',
+    roleColor: 'text-purple-600',
+    borderColor: 'border-purple-300',
   },
   {
-    id: 2,
-    name: 'Jane Smith',
-    title: 'Project Manager, Company B',
-    testimonial: 'Their project management skills are top-notch! They ensured timely delivery and adhered to our budget without compromising quality.',
-    image: 'https://via.placeholder.com/100', // Replace with an actual image URL
+    name: 'Nicole',
+    role: 'ADVOCATE (INFJ-T)',
+    comment: 'Wow! This site is just AMAZING! I felt like I had been vindicated. Like someone finally gets me and I\'m not a weirdo.',
+    img: 'path-to-image/nicole.png',
+    roleColor: 'text-green-600',
+    borderColor: 'border-green-300',
   },
   {
-    id: 3,
-    name: 'Mark Johnson',
-    title: 'Head of Design, Company C',
-    testimonial: 'The design services were innovative and tailored to our specific needs. We were very impressed with the results!',
-    image: 'https://via.placeholder.com/100', // Replace with an actual image URL
+    name: 'Caroline',
+    role: 'DEFENDER (ISFJ-A)',
+    comment: 'Reading this profile is comforting, exciting, inspiring, and a little bit freaky :) It’s great to have my strengths and weaknesses so clearly articulated.',
+    img: 'path-to-image/caroline.png',
+    roleColor: 'text-blue-600',
+    borderColor: 'border-blue-300',
   },
   {
-    id: 4,
-    name: 'Emily Davis',
-    title: 'Operations Manager, Company D',
-    testimonial: 'Technical support has been excellent. They are always there to assist us with any issues that arise.',
-    image: 'https://via.placeholder.com/100', // Replace with an actual image URL
+    name: 'Marta',
+    role: 'COMMANDER (ENTJ-A)',
+    comment: 'It is awesome to read something that describes you so well. I did not expect the profile to be so accurate.',
+    img: 'path-to-image/marta.png',
+    roleColor: 'text-purple-600',
+    borderColor: 'border-purple-300',
   },
 ];
 
-const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonialsData.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonialsData.length) % testimonialsData.length);
-  };
-
+const TestimonialCard = ({ name, role, comment, img, roleColor, borderColor }) => {
   return (
-    <section className="bg-gradient-to-r from-gray-200 to-white p-8">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">What Our Clients Say</h2>
-        <p className="text-center mb-12 text-lg text-gray-600">
-          Hear from our satisfied clients about their experiences with us.
-        </p>
-        <div className="flex justify-center">
-          <div className="bg-white rounded-lg p-8 shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out">
-            <div className="flex items-center mb-4">
-              <img
-                src={testimonialsData[currentIndex].image}
-                alt={testimonialsData[currentIndex].name}
-                className="h-16 w-16 rounded-full border-2 border-gray-300 mr-4"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">{testimonialsData[currentIndex].name}</h3>
-                <p className="text-sm text-gray-500 italic">{testimonialsData[currentIndex].title}</p>
-              </div>
-            </div>
-            <p className="text-gray-700 italic text-lg mb-6">
-              "{testimonialsData[currentIndex].testimonial}"
-            </p>
-            <div className="flex justify-between mt-4">
-              <button
-                onClick={prevTestimonial}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
-              >
-                Previous
-              </button>
-              <button
-                onClick={nextTestimonial}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
-              >
-                Next
-              </button>
-            </div>
-          </div>
+    <div className={`max-w-xs p-6 border-t-4 rounded-md ${borderColor} bg-white shadow-lg`}>
+      <div className="flex items-center space-x-4 mb-4">
+        <img className="w-16 h-16 rounded-full object-cover" src={img} alt={name} />
+        <div>
+          <h3 className="text-lg font-bold">{name}</h3>
+          <p className={`${roleColor} font-semibold`}>{role}</p>
+        </div>
+      </div>
+      <p className="text-gray-600">{comment}</p>
+    </div>
+  );
+};
+
+const Testimonials = () => {
+  return (
+    <section className="py-12 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-center text-3xl font-bold text-gray-800 mb-12">See what others have to say</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} {...testimonial} />
+          ))}
         </div>
       </div>
     </section>

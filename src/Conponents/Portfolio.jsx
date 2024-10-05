@@ -1,76 +1,96 @@
-import React, { useState } from 'react';
+import React from "react";
+import image from "../assets/p1.jpg"; // Correct import for image
+import image2 from "../assets/p4.jpg"; // Correct import for image
 
-const portfolioData = [
+// Portfolio data array
+const projects = [
   {
-    id: 1,
-    title: 'Project Alpha',
-    description: 'A state-of-the-art residential building designed with sustainability in mind.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
-    details: 'This project involved the design and construction of a residential building with energy-efficient systems and sustainable materials. Key features include solar panels and green roofs.',
+    name: "Aldgate Tower",
+    description: "",
+    image: image, // Direct reference to imported image
   },
   {
-    id: 2,
-    title: 'Project Beta',
-    description: 'An innovative bridge design that enhances connectivity and safety.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
-    details: 'The bridge was designed using advanced engineering techniques to improve traffic flow and safety. It includes pedestrian walkways and lighting for enhanced usability.',
+    name: "West Hill Primary School",
+    description: "",
+    image: image2, // Direct reference to imported image
   },
   {
-    id: 3,
-    title: 'Project Gamma',
-    description: 'A cutting-edge renewable energy facility utilizing solar power.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
-    details: 'This facility harnesses solar energy to provide clean power to the local grid. It features state-of-the-art solar panel technology and energy storage solutions.',
+    name: "Huawei Nanjing R&D Center",
+    description: "",
+    image: "path-to-image/huawei-nanjing.png", // Keeping this as a placeholder
   },
   {
-    id: 4,
-    title: 'Project Delta',
-    description: 'A modern office complex focused on energy efficiency and employee well-being.',
-    image: 'https://via.placeholder.com/300', // Replace with actual image URL
-    details: 'The office complex was designed with employee wellness in mind, incorporating natural light, green spaces, and sustainable building practices.',
-  },
+    name: "Huawei Nanjing R&D Center",
+    description: "",
+    image: "path-to-image/huawei-nanjing.png", // Keeping this as a placeholder
+  }, 
 ];
 
+// Individual project card component
+const PortfolioCard = ({ name, description, image }) => (
+  <div className="relative overflow-hidden rounded-lg shadow-md group">
+    <img
+      className="w-full h-48 object-cover transition-transform duration-500 ease-in-out transform group-hover:scale-110"
+      src={image}
+      alt={name}
+    />
+    <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 w-full">
+      <h3 className="font-bold text-center">{name}</h3>
+      {description && <p className="text-center">{description}</p>}
+    </div>
+  </div>
+);
+
+
+
+// Main portfolio component
 const Portfolio = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const handleOpenModal = (project) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
-
   return (
-    <section className="bg-gray-100 p-8">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">Our Portfolio</h2>
-        <p className="text-center mb-12 text-lg text-gray-600">
-          Explore our recent projects that demonstrate our commitment to quality and innovation.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {portfolioData.map((project) => (
-            <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" onClick={() => handleOpenModal(project)}>
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-800">{project.title}</h3>
-                <p className="mt-2 text-gray-600">{project.description}</p>
-              </div>
-            </div>
+    <section className="py-12 bg-white flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        {/* Heading */}
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-gray-900">Projects</h1>
+          <p className="mt-4 text-lg text-gray-600">
+            WyreGate Engineering Limited is a dynamic and innovative engineering
+            company that specializes in delivering high-quality electrical and
+            mechanical engineering solutions. Our projects span a wide range of
+            industries, including commercial, industrial, and residential
+            sectors. We pride ourselves on our ability to provide cutting-edge,
+            customized solutions that meet the unique needs of each client,
+            ensuring efficient and reliable outcomes.
+          </p>
+          <p className="mt-2 text-lg text-gray-600">
+            Across the globe, our teams push the limits of what’s possible and
+            build legacies for generations to come.
+          </p>
+        </div>
+
+        {/* Completed Projects */}
+        <div className="flex flex-col items-center space-y-4 mb-8">
+          <p className="font-semibold text-gray-700 text-2xl">
+            Completed projects:
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+          {projects.map((project, index) => (
+            <PortfolioCard key={index} {...project} />
           ))}
         </div>
 
-        {/* Modal for displaying project details */}
-        {selectedProject && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">{selectedProject.title}</h2>
-              <p className="text-gray-700 mb-4">{selectedProject.details}</p>
-              <button className="mt-4 bg-gray-800 text-white py-2 px-4 rounded" onClick={handleCloseModal}>Close</button>
-            </div>
-          </div>
-        )}
+        {/* Ongoing Projects */}
+        <div className="flex flex-col items-center space-y-4 mb-8 pt-10">
+          <p className="font-semibold text-gray-700 text-2xl">Ongoing Projects:</p>
+        </div>
+
+        {/* Projects Grid for Ongoing Projects */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+          {projects.map((project, index) => (
+            <PortfolioCard key={index} {...project} />
+          ))}
+        </div>
       </div>
     </section>
   );
