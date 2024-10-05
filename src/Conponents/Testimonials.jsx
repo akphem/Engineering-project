@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: 'Benny',
     role: 'ARCHITECT (INTJ-A)',
-    comment: 'Incredibly thorough and scary. It’s like someone putting a mirror to your face and you seeing your true self whether you like it or not.',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.,
     img: 'path-to-image/benny.png',
     roleColor: 'text-purple-600',
     borderColor: 'border-purple-300',
@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: 'Nicole',
     role: 'ADVOCATE (INFJ-T)',
-    comment: 'Wow! This site is just AMAZING! I felt like I had been vindicated. Like someone finally gets me and I\'m not a weirdo.',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     img: 'path-to-image/nicole.png',
     roleColor: 'text-green-600',
     borderColor: 'border-green-300',
@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: 'Caroline',
     role: 'DEFENDER (ISFJ-A)',
-    comment: 'Reading this profile is comforting, exciting, inspiring, and a little bit freaky :) It’s great to have my strengths and weaknesses so clearly articulated.',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     img: 'path-to-image/caroline.png',
     roleColor: 'text-blue-600',
     borderColor: 'border-blue-300',
