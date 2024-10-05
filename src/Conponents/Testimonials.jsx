@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: 'Benny',
     role: 'ARCHITECT (INTJ-A)',
-    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.,
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     img: 'path-to-image/benny.png',
     roleColor: 'text-purple-600',
     borderColor: 'border-purple-300',
@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: 'Nicole',
     role: 'ADVOCATE (INFJ-T)',
-    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     img: 'path-to-image/nicole.png',
     roleColor: 'text-green-600',
     borderColor: 'border-green-300',
@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: 'Caroline',
     role: 'DEFENDER (ISFJ-A)',
-    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     img: 'path-to-image/caroline.png',
     roleColor: 'text-blue-600',
     borderColor: 'border-blue-300',
