@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: 'Benny',
     role: 'ARCHITECT (INTJ-A)',
-    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     img: 'path-to-image/benny.png',
     roleColor: 'text-purple-600',
     borderColor: 'border-purple-300',
@@ -28,7 +28,7 @@ const testimonials = [
   {
     name: 'Marta',
     role: 'COMMANDER (ENTJ-A)',
-    comment: 'It is awesome to read something that describes you so well. I did not expect the profile to be so accurate.',
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     img: 'path-to-image/marta.png',
     roleColor: 'text-purple-600',
     borderColor: 'border-purple-300',
