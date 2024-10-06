@@ -55,7 +55,7 @@ const Hero = () => {
             style={{ backgroundImage: `url(${slide.image})` }}
           >
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
           </div>
         ))}
       </div>
@@ -64,7 +64,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-4xl text-center p-6">
         {/* Smooth Animated Title */}
         <h1
-          className={`text-5xl md:text-6xl font-bold mb-4 transition-all duration-700 ease-in-out transform ${
+          className={`text-5xl md:text-6xl font-extrabold mb-4 transition-all duration-700 ease-in-out transform ${
             fadeText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -83,7 +83,7 @@ const Hero = () => {
         {/* Static Call-to-Action Button */}
         <a
           href="#services"
-          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
         >
           Learn More
         </a>
