@@ -1,31 +1,76 @@
-import React from 'react';
-import logo_1 from '../assets/logo_1.png'; // Adjust the path according to your project structure
+import React, { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi'; // Import icons for the menu
+import logo from '../assets/logo_1.png'; // Importing logo image
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/about', label: 'About Us' },
+    { href: '/contact', label: 'Contact' }
+  ];
+
   return (
-    <header className="bg-white text-gray-700 p-4">
-      <div className="container mx-auto flex items-center justify-between">
-        {/* Logo and Slogan Section */}
-        <div className="flex items-center space-x-4">
-          <img
-            src={logo_1} // Use the imported logo
-            alt="Company Logo"
-            className="h-12 w-12 object-contain"
-          />
-          <div>
-            <h1 className="text-2xl font-bold">WyreGate Engineering Ltd.</h1>
-            <p className="text-sm italic">RC 1333545</p>
+    <header className="bg-gradient-to-r from-white to-indigo-300 text-green-800 shadow-lg">
+      <div className="container mx-auto px-4 py-5">
+        <div className="flex items-center justify-between">
+          {/* Logo and Slogan Section */}
+          <div className="flex items-center space-x-3 md:space-x-5">
+            <img
+              src={logo}
+              alt="WyreGate Engineering Ltd. Logo"
+              className="h-12 w-12 md:h-14 md:w-14 object-contain"
+            />
+            <div>
+              <h1 className="text-xl md:text-3xl font-bold tracking-wide text-indigo-950">WyreGate Engineering Ltd.</h1>
+              <p className="text-xs md:text-sm italic text-green-800 font-bold">RC 1333545</p>
+            </div>
           </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-lg font-medium hover:text-indigo-600 transition-colors duration-300"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 rounded-md text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
         </div>
 
-        {/* Navigation Bar */}
-        <nav className="hidden md:flex space-x-6 ml-auto">
-          <a href="/" className="text-lg font-semibold transition duration-300 hover:text-blue-600 hover:underline">Home</a>
-          <a href="/services" className="text-lg font-semibold transition duration-300 hover:text-blue-600 hover:underline">Services</a>
-          <a href="/projects" className="text-lg font-semibold transition duration-300 hover:text-blue-600 hover:underline">Projects</a> {/* Added Projects Link */}
-          <a href="/about" className="text-lg font-semibold transition duration-300 hover:text-blue-600 hover:underline">About Us</a>
-          <a href="/contact" className="text-lg font-semibold transition duration-300 hover:text-blue-600 hover:underline">Contact</a>
-        </nav>
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <nav className="md:hidden mt-4 shadow-md rounded-lg bg-white">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="block py-3 px-5 text-lg font-semibold text-indigo-500 transition-colors duration-300 hover:text-yellow-400 hover:bg-transparent"
+                onClick={toggleMenu}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        )}
       </div>
     </header>
   );
