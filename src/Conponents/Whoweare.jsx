@@ -1,5 +1,5 @@
-import React from 'react';
-import image from '../assets/watermark remove man.jpeg'; // Ensure the image path is correct
+import React from "react";
+import image from "../assets/watermark remove man.jpeg"; // Ensure the image path is correct
 
 const Whoweare = () => {
   return (
@@ -11,10 +11,17 @@ const Whoweare = () => {
             Who We Are
           </h2>
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            WyreGate Engineering Limited is a leading provider of electrical and mechanical engineering solutions.
-            Our team of experts is committed to delivering innovative solutions tailored to meet the unique needs of
-            each client. Whether you're looking for industrial, commercial, or residential services, we are dedicated 
-            to helping you achieve success with precision and excellence.
+            WYREGATE ENGINEERING LTD was established in the year 2015, over time
+            it has been able to bring together a complement of experienced,
+            resourceful and highly professional Nigerian engineers. The firm is
+            organized into three major divisions, namely, Electrical/Electronics
+            Engineering and Mechanical Engineering Civil/Structural Engineering
+            Divisions. WyreGate Engineering Limited is a leading provider of
+            electrical and mechanical engineering solutions. Our team of experts
+            is committed to delivering innovative solutions tailored to meet the
+            unique needs of each client. Whether you're looking for industrial,
+            commercial, or residential services, we are dedicated to helping you
+            achieve success with precision and excellence.
           </p>
           <button className="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 hover:shadow-xl transform hover:scale-105">
             Read More

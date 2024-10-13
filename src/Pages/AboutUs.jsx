@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const About = () => {
+const AboutUs = () => {
   return (
     <section className="py-12 bg-gradient-to-r from-blue-500 to-purple-600 text-white relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -58,4 +58,4 @@ const teamMembers = [
   },
 ];
 
-export default About;
+export default AboutUs;
